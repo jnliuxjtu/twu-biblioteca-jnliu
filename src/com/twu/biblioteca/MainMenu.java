@@ -27,6 +27,12 @@ public class MainMenu {
                     bl.checkOutBook(sc2.nextLine());
                     break;
                 }
+                case 3:{
+                    System.out.println("Please enter the book name:");
+                    Scanner sc2=new Scanner(System.in);
+                    bl.returnBook(sc2.nextLine());
+                    break;
+                }
                 default:{
                     System.out.println("*********************");
                     System.out.println("Please enter a valid option!");
