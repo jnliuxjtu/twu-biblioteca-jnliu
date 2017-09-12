@@ -34,4 +34,31 @@ public class MovieList {
         }
         return ans;
     }
+
+    public boolean checkOutMovie(String MovieName) {
+
+        if(this.searchMovieByName(MovieName)!=null&&this.searchMovieByName(MovieName).getInDock()){
+            this.searchMovieByName(MovieName).setInDock(false);
+            System.out.println("Check-out succeeded");
+            System.out.println("Thank you! Enjoy the movie");
+            return true;
+        }else{
+            System.out.println("That movie is not available");
+            if(this.searchMovieByName(MovieName)==null){
+                System.out.println("The movie doesn't exist");
+            }else{
+                System.out.println("Sorry, the movie has been checked-out");
+            }
+            return false;
+        }
+    }
+
+    private MovieInfo searchMovieByName(String movieName) {
+        for(MovieInfo movie:this.MovieInfoList){
+            if(movie.getMovieName().equals(movieName)){
+                return movie;
+            }
+        }
+        return null;
+    }
 }

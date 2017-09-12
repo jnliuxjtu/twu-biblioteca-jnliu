@@ -6,6 +6,8 @@ public class BibliotecaApp {
         new WelcomeMessage().printString();
         BookList bl=new BookList();
         bl.init();
-        new MainMenu().showMainMenu(bl);
+        MovieList ml=new MovieList();
+        ml.init();
+        new MainMenu().showMainMenu(bl,ml);
     }
 }

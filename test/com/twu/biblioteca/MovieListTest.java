@@ -28,4 +28,12 @@ public class MovieListTest {
                         "Big Hero 6, 2014, Don Hall & Chris Williams, 8\n" +
                         "Spider-Man, 1977, E. W. Swackhamer, 7\n"
                 ,outContent.toString());}
+
+    @Test
+    public void checkOutMovieTest(){
+        ml.init();
+        assertEquals(true,ml.checkOutMovie("Titanic"));
+        assertEquals(false,ml.checkOutMovie("Titanic"));
+
+    }
 }
