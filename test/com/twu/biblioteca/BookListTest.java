@@ -39,6 +39,8 @@ public class BookListTest {
         bl.init();
         bl.checkOutBook("Communications");
         assertEquals(true,bl.returnBook("Communications"));
+        assertEquals(false,bl.returnBook("Communications"));
+        assertEquals(false,bl.returnBook("error"));
     }
 
 }

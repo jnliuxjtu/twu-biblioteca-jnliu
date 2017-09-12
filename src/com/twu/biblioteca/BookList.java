@@ -39,6 +39,7 @@ public class BookList {
         if(this.searchBookByName(bn)!=null&&this.searchBookByName(bn).getInDock()){
             this.searchBookByName(bn).setInDock(false);
             System.out.println("Check-out succeeded");
+            System.out.println("Thank you! Enjoy the book");
             return true;
         }else{
             System.out.println("That book is not available");
@@ -61,7 +62,16 @@ public class BookList {
     }
 
     public boolean returnBook(String bn) {
+        if(searchBookByName(bn)==null || searchBookByName(bn).getInDock()==true){
+            System.out.println("That is not a valid book to return.");
+            return false;
+        }
         searchBookByName(bn).setInDock(true);
+        if(searchBookByName(bn).getInDock()){
+            System.out.println("Thank you for returning the book.");
+        }else{
+            System.out.println("That is not a valid book to return.");
+        }
         return searchBookByName(bn).getInDock();
     }
 }
