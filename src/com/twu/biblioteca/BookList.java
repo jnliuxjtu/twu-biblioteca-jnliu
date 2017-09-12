@@ -41,7 +41,7 @@ public class BookList {
             System.out.println("Check-out succeeded");
             return true;
         }else{
-            System.out.println("Check-out failed");
+            System.out.println("That book is not available");
             if(this.searchBookByName(bn)==null){
                 System.out.println("The book doesn't exist");
             }else{
@@ -58,5 +58,10 @@ public class BookList {
             }
         }
         return null;
+    }
+
+    public boolean returnBook(String bn) {
+        searchBookByName(bn).setInDock(true);
+        return searchBookByName(bn).getInDock();
     }
 }

@@ -34,4 +34,11 @@ public class BookListTest {
         assertEquals(false,bl.checkOutBook("Communications"));
     }
 
+    @Test
+    public void returnBookTest(){
+        bl.init();
+        bl.checkOutBook("Communications");
+        assertEquals(true,bl.returnBook("Communications"));
+    }
+
 }
