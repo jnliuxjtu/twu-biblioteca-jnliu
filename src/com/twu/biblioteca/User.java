@@ -26,11 +26,17 @@ public class User {
 //    }
 
     public boolean login(String UserID, String UserPassword){
-        if(this.getUserID()==UserID && this.getUserPassword()==UserPassword){
+        if(this.getUserID().equals(UserID) && this.getUserPassword().equals(UserPassword)){
             System.out.println("Logged in");
             this.setLoggedIn(true);
             return true;
         }else{
+//            System.out.print(UserID);
+//            System.out.print(this.getUserID());
+//            System.out.print(UserPassword);
+//            System.out.print(this.getUserPassword());
+
+            System.out.println("Login failed");
             return false;
         }
     }
